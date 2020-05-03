@@ -1,0 +1,20 @@
+{{>header}}
+<h2>These people are against animal testing! {{#if city}} and are all from {{city}} {{/if}}</h2>
+<ul>
+{{#signersArr}}
+    <li>
+    <p>
+        <a class="name" {{#if url}}href="{{url}}"{{/if}}>
+            {{first}} {{last}}</a>
+            {{age}}
+        {{#if ../city}}
+        {{!-- insert nothing --}}
+        {{else}}
+        {{!-- insert city --}}
+            <a href="/petition/signers/{{city}}">{{city}}</a>
+        {{/if}}
+         - signed at {{cutTimeStr signed_at}}
+    </p>
+    </li>
+{{/signersArr}}
+</ul>

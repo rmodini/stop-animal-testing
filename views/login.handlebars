@@ -1,0 +1,16 @@
+<h3>Log in</h3>
+{{#if error}}
+    <h4 class="error">Something went wrong! Please try again.</h4>
+{{/if}}
+<form method="POST">
+    <label for="email">Email:</label>
+    <input type="email" name="email" required>
+    <br>
+    <label for="pass">Password:</label>
+    <input type="password" name="pass" required>
+    {{!-- remember to use put this hidden input in every form --}}
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <br>
+    <button class="submit-btn">Log in</button>
+    <p>Do not have an account yet? Click here to <a href="/register">register!</a></p>
+</form>

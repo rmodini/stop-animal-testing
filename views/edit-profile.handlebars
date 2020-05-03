@@ -1,0 +1,42 @@
+{{>header}}
+<h3>Please edit what you want to change on your profile</h3>
+{{#if error}}
+    <h4 class="error">Something went wrong! Please try again.</h4>
+{{/if}}
+{{#if urlError}}
+    <h4 class="error">Website format not valid. Please try again.</h4>
+{{/if}}
+{{#if reloadError}}
+    <h4 class="error">Something went wrong! Please click <a href="/profile/edit">here</a> to try again.</h4>
+{{/if}}
+{{#if success}}
+    <h4 class="success">Profile updated! Go to <a href="/petition">sign</a> the petition now!</h4>
+{{/if}}
+{{#userProfile}}
+<form method="POST">
+    <label for="first">First name:</label>
+    <input value="{{first}}" type="text" name="first" autocomplete="off" required/>
+    <br>
+    <label for="last">Last name:</label>
+    <input value="{{last}}" type="text" name="last" autocomplete="off" required/>
+    <br>
+    <label for="email">Email:</label>
+    <input value="{{email}}" type="email" name="email" required>
+    <br>
+    <label for="pass">Password:</label>
+    <input placeholder="new password" type="password" name="pass">
+    <br>
+    <label for="age">Age:</label>
+    <input value="{{age}}" type="text" name="age" autocomplete="off">
+    <br>
+    <label for="city">City:</label>
+    <input value="{{city}}" type="text" name="city" autocomplete="off"/>
+    <br>
+    <label for="url">Website:</label>
+    <input value="{{url}}" type="text" name="url">
+    {{!-- remember to use put this hidden input in every form --}}
+    <input type="hidden" name="_csrf" value="{{../csrfToken}}">
+    <br>
+    <button class="submit-btn">Update</button>
+</form>
+{{/userProfile}}

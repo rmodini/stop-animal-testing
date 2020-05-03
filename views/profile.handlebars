@@ -1,0 +1,21 @@
+<h3>Please tell us a little about yourself</h3>
+{{#if error}}
+    <h4 class="error">Something went wrong! Please try again.</h4>
+{{/if}}
+{{#if urlError}}
+    <h4 class="error">Website format not valid. Please try again.</h4>
+{{/if}}
+<form method="POST">
+    <label for="age">Age:</label>
+    <input type="text" name="age" autocomplete="off">
+    <br>
+    <label for="city">City:</label>
+    <input type="text" name="city" autocomplete="off"/>
+    <br>
+    <label for="url">Website:</label>
+    <input type="text" name="url">
+    {{!-- remember to use put this hidden input in every form --}}
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <br>
+    <button class="submit-btn">Continue</button>
+</form>

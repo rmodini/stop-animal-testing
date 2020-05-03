@@ -1,0 +1,13 @@
+{{>header}}
+<h2>Thank you for signing for our petition, together we will make the world a better place for every being!</h2>
+<img id="animals" src="../dog.jpeg" alt="woman holding dog">
+<h4 class="thx">There are easy ways to lend your voice to animals suffering in experiments, and together we can stop animal testing. <a href="https://www.peta.org/action/easy-ways-help-animals-used-killed-experiments/">Here are six ways you can help them!</a></h4>
+<h4><a href="/petition/signers">See all {{signersLength}} signers</a></h4>
+<img id="sign" src="{{sign}}"/>
+{{#if error}}
+    <h4 class="error">Something went wrong! Please try again.</h4>
+{{/if}}
+<form method="POST">
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <button class="submit-btn">Delete Signature</button>
+</form>
